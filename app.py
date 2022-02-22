@@ -15,6 +15,7 @@ st.markdown("""
 3. Press 'submit' to get the top suggestions for next guess.
 4. Use the 👈 sidebar to change the settings.
 5. Share this app with your friends! 
+_Tip_: This app is meant to be used on a big screen. If you are on a small screen turn it sideways for a better experience.
 """)
 
 st.sidebar.header("Settings")
