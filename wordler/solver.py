@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from wordler.utils import get_word_list
-from .constants import DATA_PATH, FIXED, FLOATING, FORBIDDEN
+from wordler import FIXED, FLOATING, FORBIDDEN
 
 class Wordler:
     
