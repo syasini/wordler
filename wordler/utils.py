@@ -129,3 +129,16 @@ def convert_guess_and_hints(guess, hints):
 def get_logo():
     """Load the WORDLEr logo."""
     st.image(LOGO_PATH)
+
+def parse_metric(metric, valid_guesses):
+    if metric in ["wiki score", "letter score", "wiki score x letter score"]:
+        return metric
+    elif metric == "auto":
+        if n_step := len(valid_guesses) <=1:
+            st.write("ls")
+            return "letter score"
+        else:
+            st.write("wiki")
+            return "wiki score"
+    else:
+        raise ValueError(f"Metric {metric} is not valid")
