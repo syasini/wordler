@@ -23,7 +23,8 @@ st.sidebar.header("Settings")
 
 n_steps = st.sidebar.slider("Number of steps", 1, 10, value=3)
 n_suggestions = st.sidebar.slider("Suggestion List Limit (0 shows all)", 0, 30, value=10,)
-metric = st.sidebar.selectbox("suggestion metric:", ["wiki score", "letter score", "wiki score x letter score"])
+metric = st.sidebar.selectbox("suggestion metric:", ["auto", "wiki score", "letter score", "wiki score x letter score"])
+
 
 all_guesses, all_hints = submit_guesses(n_steps)
 valid_guesses, valid_hints = keep_valid_guesses(all_guesses, all_hints)
@@ -43,7 +44,8 @@ for guess, hint in zip(valid_guesses, valid_hints):
 
 if st.session_state["FormSubmitter:form-submit"]:
     st.header("Next Word Suggestions")
-    st.dataframe(wordler.suggest_next_word(key_sort=metric, head=n_suggestions))
+    key_sort = parse_metric(metric, valid_guesses)
+    st.dataframe(wordler.suggest_next_word(key_sort=key_sort, head=n_suggestions))
 
 st.sidebar.markdown("---")
 
