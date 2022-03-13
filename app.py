@@ -12,7 +12,7 @@ st.sidebar.caption("A [WORDLE](https://www.nytimes.com/games/wordle/index.html) 
 with st.expander("How to take the fun out of WORDLE", expanded=True):
     st.markdown("""
     1. Type in the 5️⃣ letters for your GUESS in each step (Start with **_ARISE_**! Trust me...). 
-    2. Select the colors you get back from [WORDLE](https://www.nytimes.com/games/wordle/index.html) for each letter, 
+    2. Select the colors you get back from [WORDLE](https://www.nytimes.com/games/wordle/index.html) for each letter. 
     3. Press 'submit' to get the top suggestions for next guess.
     4. Use the 👈 sidebar to change the settings.
     5. Share this app with your friends! 
