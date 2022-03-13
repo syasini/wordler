@@ -5,6 +5,8 @@ import streamlit as st
 from wordler.utils import submit_guesses, print_letters_hints, is_valid_word, keep_valid_guesses, convert_guess_and_hints, get_logo, parse_metric
 from wordler.solver import Wordler
 
+# Let's go!
+
 get_logo()
 
 st.sidebar.title("WORDLEr")
@@ -37,7 +39,7 @@ print_letters_hints(valid_guesses, all_hints)
 for guess in valid_guesses:
     is_valid_word(guess)
 
-# Let the maginc happen...
+# Let the magic happen...
 wordler = Wordler()
 for guess, hint in zip(valid_guesses, valid_hints):
     wordler.update_constraint(*convert_guess_and_hints(guess, hint))
