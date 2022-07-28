@@ -17,6 +17,8 @@ with st.expander("How to take the fun out of WORDLE", expanded=True):
     2. Select the colors you get back from [WORDLE](https://www.nytimes.com/games/wordle/index.html) for each letter. 
     3. Press 'submit' to get the top suggestions for next guess.
     
+    --- 
+    
     ⚙️ Use the 👈 sidebar to change the settings.
     
     🎈 Share this app with your friends! 
