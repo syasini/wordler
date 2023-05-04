@@ -33,7 +33,7 @@ n_suggestions = st.sidebar.slider("Suggestion list limit (0 shows all)", 0, 30, 
 metric = st.sidebar.selectbox("Suggestion metric:", ["auto", "wiki score", "letter score", "wiki score x letter score"])
 metric_in_use = st.sidebar.empty()
 
-mark_past_solutions = st.sidebar.checkbox("Mark past solutions", value=True, help="When checked, previous WORDLE solutions will be marked with red color.")
+mark_past_solutions = st.sidebar.checkbox("Mark past solutions", value=False, help="When checked, previous WORDLE solutions will be marked with red color.")
 
 all_guesses, all_hints = submit_guesses(n_steps)
 valid_guesses, valid_hints = keep_valid_guesses(all_guesses, all_hints)
