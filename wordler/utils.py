@@ -149,13 +149,13 @@ def color_background_red(word, word_list):
     """
     color the background red if word is in the word_list
     """
-    color = 'red' if word in word_list else ''
+    color = '#db141e' if word in word_list else ''
     return f'background-color: {color}'
 
 st.cache(ttl=7200) # cache data for two hours
 def get_past_solutions(url = "https://wordfinder.yourdictionary.com/wordle/answers/"):
     """
-    Load the 
+    Load the past solutions and return a set as reference
     """
     try:
         solutions_html = pd.read_html(url)
