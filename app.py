@@ -33,7 +33,7 @@ n_suggestions = st.sidebar.slider("Suggestion list limit (0 shows all)", 0, 30, 
 metric = st.sidebar.selectbox("Suggestion metric:", ["auto", "wiki score", "letter score", "wiki score x letter score"])
 metric_in_use = st.sidebar.empty()
 
-mark_past_solutions = st.sidebar.checkbox("Mark past solutions", value=True, help="When checked, previous WORDLE solutions will be marked with red color.")
+mark_past_solutions = st.sidebar.checkbox("Mark past solutions", value=True, help="When checked, previous WORDLE solutions will be highlighted in red.")
 
 
 all_guesses, all_hints = submit_guesses(n_steps)
@@ -54,6 +54,8 @@ for guess, hint in zip(valid_guesses, valid_hints):
 
 if st.session_state["FormSubmitter:form-submit"]:
     st.header("Next Word Suggestions")
+    if mark_past_solutions:
+        st.caption("Red cells indicate that the word has already been a WORDLE solution in the past." )
     key_sort = parse_metric(metric, valid_guesses, placeholder=metric_in_use)
     suggestions_df = wordler.suggest_next_word(key_sort=key_sort, head=n_suggestions)
     if mark_past_solutions:
