@@ -144,3 +144,10 @@ def parse_metric(metric, valid_guesses, placeholder):
             return metric
     else:
         raise ValueError(f"Metric {metric} is not valid")
+    
+def color_background_red(word, word_list):
+    """
+    color the background red if word is in the word_list
+    """
+    color = 'red' if word in word_list else ''
+    return f'background-color: {color}'
