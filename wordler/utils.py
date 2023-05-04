@@ -151,3 +151,18 @@ def color_background_red(word, word_list):
     """
     color = 'red' if word in word_list else ''
     return f'background-color: {color}'
+
+st.cache(ttl=7200) # cache data for two hours
+def get_past_solutions(url = "https://wordfinder.yourdictionary.com/wordle/answers/"):
+    """
+    Load the 
+    """
+    try:
+        solutions_html = pd.read_html(url)
+        solutions_df = pd.concat(segment for segment in solutions_html).iloc[1:].reset_index(drop=True)
+    except: # if for whatever reason it doesn't work, return an empty dataframe
+        solutions_df = pd.DataFrame({"Answer": []})
+
+    return set(solutions_df["Answer"].tolist())
+
+
