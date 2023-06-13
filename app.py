@@ -11,6 +11,7 @@ get_logo()
 
 st.sidebar.title("WORDLEr")
 st.sidebar.caption("A [WORDLE](https://www.nytimes.com/games/wordle/index.html) ch🟨🟩t sh🟨🟨t made by [Siavash Yasini](https://www.linkedin.com/in/siavash-yasini/).")
+st.sidebar.caption("Look behind the scenes of Wordler [here](https://blog.streamlit.io/the-ultimate-wordle-cheat-sheet/).")
 with st.expander("How to take the fun out of WORDLE", expanded=True):
     st.markdown("""
     1. Type in the 5️⃣ letters for your GUESS in each step (Start with **_ARISE_**! Trust me...). 
