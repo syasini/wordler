@@ -159,7 +159,7 @@ def get_past_solutions(url = "https://wordfinder.yourdictionary.com/wordle/answe
     """
     try:
         solutions_html = pd.read_html(url)
-        solutions_df = pd.concat(segment for segment in solutions_html).iloc[1:].reset_index(drop=True)
+        solutions_df = pd.concat(segment for segment in solutions_html).iloc[2:].reset_index(drop=True)
     except: # if for whatever reason it doesn't work, return an empty dataframe
         solutions_df = pd.DataFrame({"Answer": []})
 
