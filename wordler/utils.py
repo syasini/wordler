@@ -78,7 +78,7 @@ def step_results(letters: List[str], colors: List[str], step):
                 with col: 
                     st.selectbox(" ", colors, index=i, key=f"{step}_color_{i}", disabled=True)
 
-@st.cache
+@st.cache_data
 def get_word_list():
     """Load the word list dataset."""
 
@@ -86,7 +86,7 @@ def get_word_list():
     data.rename(columns=lambda x : x.replace("_", " "), inplace=True)
     return data
 
-@st.cache
+@st.cache_data
 def get_word_set():
     """Create a word list look up table."""
 
@@ -152,7 +152,7 @@ def color_background_red(word, word_list):
     color = '#db141e' if word in word_list else ''
     return f'background-color: {color}'
 
-st.cache(ttl=7200) # cache data for two hours
+@st.cache_data(ttl=7200)  # cache data for two hours
 def get_past_solutions(url = "https://wordfinder.yourdictionary.com/wordle/answers/"):
     """
     Load the past solutions and return a set as reference
@@ -164,5 +164,4 @@ def get_past_solutions(url = "https://wordfinder.yourdictionary.com/wordle/answe
         solutions_df = pd.DataFrame({"Answer": []})
 
     return set(solutions_df["Answer"].tolist())
-
 

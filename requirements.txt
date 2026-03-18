@@ -1,7 +1,6 @@
-numpy
-pandas
-matplotlib
-plotly
-streamlit
-scikit-learn
-lxml
+# Pinned for reproducible Streamlit Community Cloud deployments.
+numpy==1.26.4
+pandas==1.5.3
+streamlit==1.37.0
+altair==4.2.2
+lxml==5.3.0
